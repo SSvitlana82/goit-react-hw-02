@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: stretch;
+}
+.title {
+  color: black;
+  width: fit-content;
+}
+.description {
+  color: black;
+  width: fit-content;
+}
