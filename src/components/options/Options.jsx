@@ -1,9 +1,11 @@
 import React from "react";
+import style from "./Options.module.css";
 
-const Options = ({ updateFeedback }) => {
+const Options = ({ updateFeedback, totalFeedback, resetReviews }) => {
   return (
-    <div>
+    <div className={style.btn}>
       <button
+        className={style.btnDescrip}
         onClick={() => {
           updateFeedback("good");
         }}
@@ -11,6 +13,7 @@ const Options = ({ updateFeedback }) => {
         Good
       </button>
       <button
+        className={style.btnDescrip}
         onClick={() => {
           updateFeedback("neutral");
         }}
@@ -18,13 +21,18 @@ const Options = ({ updateFeedback }) => {
         Neutral
       </button>
       <button
+        className={style.btnDescrip}
         onClick={() => {
           updateFeedback("bad");
         }}
       >
         Bad
       </button>
-      <button onClick={() => {}}>Reset</button>
+      {totalFeedback > 0 && (
+        <button className={style.btnDescrip} onClick={resetReviews}>
+          Reset
+        </button>
+      )}
     </div>
   );
 };
